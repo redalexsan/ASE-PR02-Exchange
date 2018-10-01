@@ -21,7 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:text="@string/defaultValue"/>
+        android:text="@string/defaultValue"
+        android:focusedByDefault="true"
+        android:selectAllOnFocus="true"
+        android:focusableInTouchMode="true" />
 
     <TextView
         android:id="@+id/txtOriginCoin"
