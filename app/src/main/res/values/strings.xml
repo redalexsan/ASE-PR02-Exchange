@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Exchange</string>
+    <string name="main_txtquantity">Amount</string>
+    <string name="main_txtOriginCoin">From currency</string>
+    <string name="txt_dolar">Dollar</string>
+    <string name="txt_euro">Euro</string>
+    <string name="txt_yen">Yen</string>
+    <string name="txtBtnExange">Exange</string>
+    <string name="txtMonedaCambio">To currency</string>
+    <string name="defaultValue">0.00</string>
+</resources>

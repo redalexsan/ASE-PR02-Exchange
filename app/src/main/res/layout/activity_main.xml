@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/monedaOrigen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_txtquantity"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/txtAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:text="@string/defaultValue"/>
+
+    <TextView
+        android:id="@+id/txtOriginCoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_txtOriginCoin"
+        android:layout_marginTop="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/groupOrigin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <RadioButton
+            android:id="@+id/rbFromDollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_dolar"
+            android:padding="8dp"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbFromEuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_euro"
+            android:padding="8dp"/>
+
+        <RadioButton
+            android:id="@+id/rbFromPound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_yen"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/imgFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_dollar"
+            android:layout_marginLeft="16dp"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtMonedaCambio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtMonedaCambio"/>
+
+    <RadioGroup
+        android:id="@+id/groupChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <RadioButton
+            android:id="@+id/rbToDollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_dolar"
+            android:padding="8dp"/>
+
+        <RadioButton
+            android:id="@+id/rbToEuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_euro"
+            android:padding="8dp"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbToPound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_yen"
+            android:padding="8dp" />
+
+        <ImageView
+            android:id="@+id/imgTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_euro"
+            android:layout_marginLeft="16dp"
+            />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnExange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtBtnExange"/>
+
+
+
+</LinearLayout>
