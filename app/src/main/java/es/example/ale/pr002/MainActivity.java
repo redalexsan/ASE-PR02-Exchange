@@ -1,7 +1,5 @@
 package es.example.ale.pr002;
 
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,12 +9,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
 
     private EditText cantidadTxt;
     private RadioGroup groupBtnOrigin, groupBtnChange;
     private RadioButton dollarOrigin, euroOrigin, yenOrigin, dollarChange, euroChange, yenChange;
     private ImageView imagenMonedaOrigen, imagenMonedaCambio;
+    // LAS VISTAS QUE SÓLO SE USEN EN UN ÚNICO MÉTODO PUEDES DEFINIRLAS COMO LOCALES A ESE MÉTODO.
     private Button btnExange;
     private int idOrigen, idCambio;
     private double cantidad;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         yenChange = ActivityCompat.requireViewById(this, R.id.rbToPound);
         imagenMonedaCambio = ActivityCompat.requireViewById(this, R.id.imgTo);
         imagenMonedaOrigen = ActivityCompat.requireViewById(this, R.id.imgFrom);
-        btnExange = ActivityCompat.requireViewById(this,R.id.btnExange);
+        btnExange = ActivityCompat.requireViewById(this,R.id.btnExchange);
 
 
 
@@ -66,8 +68,12 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         final double dolar_euro = 0.86, dolar_yen = 113.69, euro_yen = 132.12;
         double cantidad_pasada = 0;
 
+        // EL MÉTODO parseDouble PUEDE PRODUCIR LA EXCEPCIÓN NumberFormatException
+        // PRUEBA A DEJAR EN BLANCO EL EDITTEXT...
         cantidad = Double.parseDouble(String.valueOf(cantidadTxt.getText()));
 
+        // HAZ Code -> Reformat Code PARA QUE EL CÓDIGO QUEDE MÁS LIMPITO Y LOS OPERADORES
+        // SE SEPAREN DE LOS OPERANDOS.
         if (cantidad <= 0)
             Toast.makeText(getApplicationContext(),"0",Toast.LENGTH_SHORT).show();
         else {
@@ -93,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                     //Yen a euro
                     cantidad_pasada = cantidad / euro_yen;
             }
+            // LAS MONEDAS SE MUESTRAN NORMALMENTE CON DOS DECIMALES. USA UN RECURSO DE CADENA
+            // PARAMETRIZADO CON "%1$.2f %s = %2$.2f %s"
             Toast.makeText(getApplicationContext(),String.valueOf(cantidad_pasada),Toast.LENGTH_SHORT).show();
         }
     }
