@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- NO USES LITERALES DE CANTIDAD, COMO 8DP, DEFINE UN RECURSO DE DIMENSIÓN -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,6 +17,9 @@
         android:text="@string/main_txtquantity"
         android:layout_marginTop="8dp"/>
 
+    <!-- EL ATRIBUTO focusedByDefault SOLO FUNCIONA A PARTIR DE LA API 26 -->
+    <!-- LOS EDITTEXT NUMÉRICOS NORMALMENTE ALINEAN SU CONTENIDO A LA DERECHA, CON EL
+         ATRIBUTO android:gravity -->
     <EditText
         android:id="@+id/txtAmount"
         android:layout_width="match_parent"
@@ -62,6 +66,9 @@
             android:text="@string/txt_yen"
             android:padding="8dp"/>
 
+        <!-- EN LOS IMAGEVIEW DEFINE SIEMPRE EL ATRIBUTO android:contentDescription
+             CON UNA DESCRIPCIÓN TEXTUAL DE LA IMAGEN -->
+        <!-- EN VEZ DE USAR ATRIBUTOS ...LEFT USA ...START Y EN VEZ DE ...RIGHT USA ...END -->
         <ImageView
             android:id="@+id/imgFrom"
             android:layout_width="wrap_content"
@@ -116,8 +123,9 @@
 
     </RadioGroup>
 
+    <!-- TE CAMBIO EL NOMBRE DEL BOTON A btnExchange. FÍJATE BIEN -->
     <Button
-        android:id="@+id/btnExange"
+        android:id="@+id/btnExchange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtBtnExange"/>
